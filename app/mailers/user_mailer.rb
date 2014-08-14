@@ -8,4 +8,7 @@ class UserMailer < ActionMailer::Base
 	attachments["#{customer.name.tr(" ", "_")}_#{time}.xlsx"] = File.read("#{Rails.root}/tmp/#{customer.name.tr(" ", "_")}_#{time}.xlsx")
     mail(to: @customer.emails, subject: 'DAILY REPORT')
   end
+  def alert_report()
+    mail(to: "anuragpratap_apsc@yahoo.in",subject : 'ALERT')
+  end
 end

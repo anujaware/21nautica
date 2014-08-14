@@ -9,7 +9,13 @@ module MovementsHelper
 
   def alert(updated_at, element)
     time = STATUS_CHANGE_DURATION[element.aasm.events.first.to_sym] * (24*60*60) 
-    (Time.now - updated_at) > time 
+    if(Time.now - updated_at) > time
+      UserMailer.alert_report().deliver
+      return true
+    else
+      return false
+    end
+
   end
 
 end
