@@ -9,6 +9,6 @@ class UserMailer < ActionMailer::Base
     mail(to: @customer.emails, subject: 'DAILY REPORT')
   end
   def alert_report()
-    mail(to: "anuragpratap_apsc@yahoo.in",subject : 'ALERT')
+    mail(to: "anuragpratap_apsc@yahoo.in",subject: 'ALERT')
   end
 end
